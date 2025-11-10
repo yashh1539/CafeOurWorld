@@ -1,0 +1,337 @@
+/* ------------------------------
+   Cafecito Santa Fe – styles.css
+   ------------------------------ */
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f7f3ef;
+  color: #3b2f2f;
+  line-height: 1.7;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #7c4a21;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+  color: #a86a3d;
+}
+
+/* Navigation */
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: #3b2f2f;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav__list a:hover {
+  color: #a86a3d;
+  transform: translateY(-2px);
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("3rd.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  animation: fadeInHero 1.5s ease-in-out;
+}
+
+.hero__inner h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  animation: slideDown 1.2s ease-in-out;
+}
+
+.hero__inner .sub {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  animation: fadeInText 2s ease-in-out;
+}
+
+.hero__img {
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero__img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.section:nth-child(even) {
+  animation-delay: 0.3s;
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  color: #7c4a21;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.section h2:hover {
+  color: #a86a3d;
+}
+
+.section p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.section p:hover {
+  transform: scale(1.02);
+  color: #5a4031;
+}
+
+.section--alt {
+  background-color: #f2e6d8;
+}
+
+/* MENU LIST */
+.menu-list {
+  list-style: none;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.menu-list li {
+  margin: 12px 0;
+  border-bottom: 1px dotted #c7b299;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.menu-list li:hover {
+  transform: translateX(5px);
+}
+
+.menu-list strong {
+  color: #7c4a21;
+}
+
+/* HOURS */
+.hours {
+  list-style: none;
+  max-width: 400px;
+  margin: 20px auto 40px;
+  font-size: 1rem;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #c7b299;
+  padding: 8px 0;
+}
+
+/* MAP */
+.map-wrap {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.map-wrap:hover {
+  transform: scale(1.02);
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+/* FORM / NEWSLETTER */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.form label {
+  font-weight: 600;
+  color: #7c4a21;
+}
+
+.form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.form input:focus {
+  box-shadow: 0 0 10px rgba(168, 106, 61, 0.4);
+  outline: none;
+}
+
+.form button {
+  background-color: #a86a3d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #c47f4a;
+  transform: translateY(-3px);
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #3b2f2f;
+  color: #f7f3ef;
+  padding: 50px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  animation: fadeInFooter 2s ease-in-out;
+}
+
+.site-footer p + p {
+  margin-top: 8px;
+  color: #c7b299;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInHero {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInFooter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__list.show {
+    display: flex;
+  }
+
+  .hero__inner h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+}

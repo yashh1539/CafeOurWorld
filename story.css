@@ -1,0 +1,349 @@
+/* ------------------------------
+   Cafecito Santa Fe – About Page Styles
+   ------------------------------ */
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f7f3ef;
+  color: #3b2f2f;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ------------------------------
+   Header
+   ------------------------------ */
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.site-header:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #7c4a21;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.brand:hover {
+  color: #a86a3d;
+  transform: scale(1.05);
+}
+
+/* Navigation */
+.nav__toggle {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: #3b2f2f;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.nav__list a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #a86a3d;
+  transition: width 0.3s ease;
+}
+
+.nav__list a:hover::after {
+  width: 100%;
+}
+
+.nav__list a:hover {
+  color: #a86a3d;
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Hero Section
+   ------------------------------ */
+.hero {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("4th.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(26, 26, 26, 0.25);
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+
+.hero:hover::before {
+  opacity: 0.7;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero__content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease, letter-spacing 0.4s ease;
+}
+
+.hero__content .sub {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  transition: opacity 0.4s ease;
+}
+
+.hero:hover .hero__content h1 {
+  transform: scale(1.05);
+  letter-spacing: 1px;
+}
+
+.hero:hover .hero__content .sub {
+  opacity: 0.9;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------
+   Section Styles
+   ------------------------------ */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+.section:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.section--alt {
+  background-color: #f2e6d8;
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #b2570d;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.section h2:hover {
+  color: #a86a3d;
+}
+
+.section p {
+  max-width: 750px;
+  margin: 0.8rem auto;
+  color: #707a7b;
+  font-size: 1.05rem;
+}
+
+/* ------------------------------
+   Footer
+   ------------------------------ */
+.site-footer {
+  background-color: #3b2f2f;
+  color: #f7f3ef;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer p {
+  font-size: 0.95rem;
+  color: #e9e2d8;
+  transition: color 0.4s ease;
+}
+
+.site-footer p:hover {
+  color: #fff;
+}
+
+/* Subtle footer glow */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #7c4a21, #a86a3d, #7c4a21);
+  background-size: 300% 100%;
+  animation: glowMove 6s linear infinite;
+}
+
+@keyframes glowMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 300% 0; }
+}
+
+/* ------------------------------
+   Our Story Section
+   ------------------------------ */
+.our-story {
+  background-color: #f2e6d8;
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+.our-story h3 {
+  font-family: "Playfair Display", serif;
+  color: #7c4a21;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  transition: color 0.4s ease;
+}
+
+.our-story h3:hover {
+  color: #a86a3d;
+}
+
+.our-story p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  font-size: 1rem;
+  color: #3b2f2f;
+  line-height: 1.8;
+  transition: transform 0.4s ease;
+}
+
+.our-story p:hover {
+  transform: scale(1.02);
+}
+
+.our-story strong {
+  color: #a86a3d;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------
+   Responsive Design
+   ------------------------------ */
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .hero__content h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+
+  .our-story {
+    padding: 60px 15px;
+  }
+
+  .our-story h3 {
+    font-size: 1.6rem;
+  }
+
+  .our-story p {
+    font-size: 0.95rem;
+  }
+
+}
+
