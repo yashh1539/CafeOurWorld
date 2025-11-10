@@ -342,3 +342,7 @@ footer {
   background: #c13584; /* darker on hover */
   transform: scale(1.05); /* slight zoom effect */
 }
+/* Mobile Menu Toggle */
+.nav__list--active {
+  display: flex !important;
+}
