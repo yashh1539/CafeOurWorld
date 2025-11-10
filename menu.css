@@ -324,3 +324,21 @@ footer {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Instagram Link Styling */
+.site-footer a.instagram-link {
+  color: #fff; /* text color */
+  background: #e4405f; /* Instagram pink/red */
+  padding: 8px 16px; /* space around text */
+  border-radius: 25px; /* rounded pill shape */
+  text-decoration: none; /* remove underline */
+  display: inline-flex; /* align icon & text */
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.site-footer a.instagram-link:hover {
+  background: #c13584; /* darker on hover */
+  transform: scale(1.05); /* slight zoom effect */
+}
