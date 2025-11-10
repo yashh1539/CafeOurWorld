@@ -346,3 +346,21 @@ footer {
 .nav__list--active {
   display: flex !important;
 }
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+}
