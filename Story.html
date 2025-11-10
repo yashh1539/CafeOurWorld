@@ -3,28 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | CafeOurWorld About</title>
+  <title>About | CafeOurWorld</title>
 
   <meta name="description" content="A family-owned café blending Argentina, Armenia, and Italy at the Trailhead in Santa Fe." />
   <link rel="icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="story.css" />
   <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body>
+  <!-- Header / Navbar -->
   <header class="site-header" role="banner">
     <div class="container">
       <a class="brand" href="index.html">CafeOurWorld</a>
       <nav class="nav" aria-label="Primary">
         <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
         <ul id="nav-menu" class="nav__list">
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="visitus.html">Visit</a></li>
-          <li><a href="story.html">About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Menu.html">Menu</a></li>
+          <li><a href="Findus.html">Visit</a></li>
+          <li><a href="Story.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- Main Content -->
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero__inner">
@@ -35,28 +39,32 @@
     </section>
 
     <section class="our-story">
-  <h3>Our Story</h3>
-  <p>
-    Café Our World began with a simple dream — to create a space where everyone could enjoy great food, good coffee, and even better company.  
-    Founded by <strong>Anil Golharkar</strong> and <strong>Gaurav Golharkar</strong> from <strong>Yavatmal</strong>, the café opened its doors on <strong>7th September 2025</strong> with a vision to bring warmth and togetherness to every meal.
-  </p>
-  <p>
-    What started as a small idea over countless cups of chai soon turned into a cozy café filled with laughter, friendships, and the aroma of freshly brewed coffee.  
-    For Anil Golharkar his son Gaurav Golharkar, Café Our World isn’t just a business — it’s a reflection of their belief that food tastes best when shared with love.
-  </p>
-  <p>
-    Every sip, every bite, and every smile here is a reminder that happiness can be found in the simplest moments — right here, in Our World.
-  </p>
-</section>
-
+      <h3>Our Story</h3>
+      <p>
+        Café Our World began with a simple dream — to create a space where everyone could enjoy great food, good coffee, and even better company.  
+        Founded by <strong>Anil Golharkar</strong> and <strong>Gaurav Golharkar</strong> from <strong>Yavatmal</strong>, the café opened its doors on <strong>7th September 2025</strong> with a vision to bring warmth and togetherness to every meal.
+      </p>
+      <p>
+        What started as a small idea over countless cups of chai soon turned into a cozy café filled with laughter, friendships, and the aroma of freshly brewed coffee.  
+        For Anil Golharkar and his son Gaurav Golharkar, Café Our World isn’t just a business — it’s a reflection of their belief that food tastes best when shared with love.
+      </p>
+      <p>
+        Every sip, every bite, and every smile here is a reminder that happiness can be found in the simplest moments — right here, in Our World.
+      </p>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <p>&copy; <span id="year"></span> Our World</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
-  <link rel="stylesheet" href="story.css">
+  <script>
+    // Automatically update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
