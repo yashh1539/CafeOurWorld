@@ -138,16 +138,27 @@
   </footer>
 
   <!-- ✅ Menu Toggle Script -->
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navList = document.getElementById('nav-list');
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navList = document.getElementById('nav-list');
+  const navLinks = navList.querySelectorAll('a');
 
-    navToggle.addEventListener('click', () => {
-      navList.classList.toggle('nav__list--open');
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-      navToggle.setAttribute('aria-expanded', !expanded);
+  // ✅ Toggle menu open/close
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navList.classList.toggle('nav__list--open');
+  });
+
+  // ✅ Close menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('nav__list--open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
