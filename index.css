@@ -416,7 +416,9 @@ body {
   }
 
   .nav__list a:hover {
-    color: #a86a3d;
+    color: #2d1503;
+    color: #735f5f;
+    color: #2d1503;
   }
 
   .gallery-container {
