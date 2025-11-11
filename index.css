@@ -447,3 +447,27 @@ body {
     padding: 6px 14px;
   }
 }
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    width: 220px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav__list.nav__list--open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
