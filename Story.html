@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="story.css" />
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body>
@@ -16,8 +17,13 @@
     <div class="container">
       <a class="brand" href="index.html">CafeOurWorld</a>
       <nav class="nav">
-        <button class="nav__toggle">☰ Menu</button>
-        <ul class="nav__list">
+        <!-- ✅ Added working mobile toggle -->
+        <button id="nav-toggle" class="nav__toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- ✅ Added ID for JS toggle -->
+        <ul id="nav-list" class="nav__list">
           <li><a href="index.html">Home</a></li>
           <li><a href="Menu.html">Menu</a></li>
           <li><a href="visitus.html">Visit</a></li>
@@ -67,6 +73,17 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ✅ Working Mobile Menu Script -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('nav__list--open');
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+
 </body>
 </html>

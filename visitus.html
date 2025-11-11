@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CafeOurWorld - Visit Us</title>
   <link rel="stylesheet" href="findus.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
@@ -13,8 +14,13 @@
     <div class="container">
       <a href="index.html" class="brand">CafeOurWorld</a>
       <nav class="nav">
-        <button class="nav__toggle">☰ Menu</button>
-        <ul class="nav__list">
+        <!-- ✅ Added working hamburger toggle -->
+        <button id="nav-toggle" class="nav__toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- ✅ Added ID to nav list -->
+        <ul id="nav-list" class="nav__list">
           <li><a href="index.html">Home</a></li>
           <li><a href="Menu.html">Menu</a></li>
           <li><a href="visitus.html">Visit</a></li>
@@ -34,6 +40,7 @@
       </div>
     </section>
 
+    <!-- LOCATION & HOURS -->
     <section class="section">
       <div class="container">
         <h2>Location & Hours</h2>
@@ -57,6 +64,7 @@
       </div>
     </section>
 
+    <!-- CONTACT / NEWSLETTER -->
     <section class="section section--alt">
       <div class="container">
         <h2>Contact & Newsletter</h2>
@@ -81,6 +89,18 @@
       </p>
     </div>
   </footer>
+
+  <!-- ✅ Added working menu toggle JS -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('nav__list--open');
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* ------------------------------
-   Cafecito Santa Fe – styles.css
+   CafeOurWorld – styles.css (Updated for working mobile menu)
    ------------------------------ */
 
 /* Font Imports */
@@ -79,8 +79,10 @@ body {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  color: #3b2f2f;
+  z-index: 1000;
 }
 
 /* HERO SECTION */
@@ -306,8 +308,16 @@ body {
   to { opacity: 1; }
 }
 
-/* RESPONSIVE */
+/* ✅ RESPONSIVE (Updated for Working Mobile Menu) */
 @media (max-width: 768px) {
+  .site-header .container {
+    position: relative;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
   .nav__list {
     display: none;
     flex-direction: column;
@@ -316,15 +326,32 @@ body {
     top: 65px;
     right: 20px;
     padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 999;
   }
 
-  .nav__toggle {
-    display: block;
-  }
-
-  .nav__list.show {
+  /* 👇 When menu is toggled open */
+  .nav__list.nav__list--open {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav__list li {
+    margin: 10px 0;
+    text-align: right;
+  }
+
+  .nav__list a {
+    color: #3b2f2f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
   }
 
   .hero__inner h1 {

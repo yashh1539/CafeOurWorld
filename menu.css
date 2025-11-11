@@ -1,5 +1,5 @@
 /* ------------------------------
-   Cafecito Santa Fe – Style.css
+   CafeOurWorld – style.css (Final Synced Version)
    ------------------------------ */
 
 /* Font Imports */
@@ -27,36 +27,41 @@ body {
   margin: auto;
 }
 
-/* Header */
-header {
+/* HEADER */
+.site-header {
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 10;
   animation: fadeInDown 1s ease forwards;
+  transition: all 0.3s ease-in-out;
 }
 
-header .container {
+.site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 0;
 }
 
-.logo {
+/* Brand */
+.brand {
+  text-decoration: none;
   font-family: "Playfair Display", serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #7c4a21;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.logo:hover {
+.brand:hover {
+  color: #a86a3d;
   transform: scale(1.05);
 }
 
-/* Navigation */
+/* NAVIGATION */
 .nav__list {
   list-style: none;
   display: flex;
@@ -79,19 +84,21 @@ header .container {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  color: #3b2f2f;
+  z-index: 1000;
 }
 
-/* Hero Section */
+/* HERO */
 .hero {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url('2nd.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   animation: fadeIn 1.2s ease-in-out;
 }
 
@@ -114,37 +121,11 @@ header .container {
   transform: scale(1.02);
 }
 
-.service-hours {
-  margin-top: 25px;
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* Local Friends */
-.local-friends {
-  background-color: #f2e6d8;
-  padding: 60px 20px;
-  text-align: center;
-  animation: fadeIn 1.5s ease;
-}
-
-.local-friends h3 {
-  font-family: "Playfair Display", serif;
-  color: #7c4a21;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.local-friends h3:hover {
-  color: #a86a3d;
-  transform: scale(1.05);
-}
-
-/* Menu Section */
+/* MENU SECTION */
 .menu {
   text-align: center;
   animation: fadeIn 1.5s ease;
+  padding: 60px 20px;
 }
 
 .menu h2 {
@@ -190,7 +171,7 @@ header .container {
   filter: brightness(1.1);
 }
 
-/* Veg Delights */
+/* VEG DELIGHTS */
 .veg-delights {
   background-color: #f2e6d8;
   padding: 60px 20px;
@@ -220,8 +201,8 @@ header .container {
   transform: scale(1.02);
 }
 
-/* Footer */
-footer {
+/* FOOTER */
+.site-footer {
   background-color: #3b2f2f;
   color: #f7f3ef;
   padding: 50px 20px;
@@ -229,70 +210,76 @@ footer {
   animation: fadeInUp 1.2s ease;
 }
 
-.footer-info p {
+.site-footer p {
   margin-bottom: 10px;
   font-size: 0.95rem;
 }
 
-.newsletter {
-  margin: 25px 0;
-}
-
-.newsletter form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.newsletter input {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 250px;
-}
-
-.newsletter button {
-  background-color: #a86a3d;
+.instagram-link {
   color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.newsletter button:hover {
-  background-color: #c47f4a;
-  transform: translateY(-2px);
-}
-
-.credits {
-  font-size: 0.8rem;
-  color: #bfa98a;
-  margin-top: 15px;
-}
-
-/* Brand */
-.brand {
+  background: #e4405f;
+  padding: 8px 16px;
+  border-radius: 25px;
   text-decoration: none;
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  color: #7c4a21;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.brand:hover {
+.instagram-link:hover {
+  background: #c13584;
   transform: scale(1.05);
-  color: #a86a3d;
 }
 
-/* Responsive for mobile screens */
+/* ===============================
+   RESPONSIVE NAVIGATION (Mobile)
+   =============================== */
 @media (max-width: 768px) {
+  .site-header .container {
+    position: relative;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    width: 220px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .nav__list.nav__list--open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav__list li {
+    margin: 10px 0;
+    text-align: right;
+  }
+
+  .nav__list a {
+    color: #3b2f2f;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
   .menu-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -304,7 +291,9 @@ footer {
   }
 }
 
-/* Keyframe Animations */
+/* ===============================
+   ANIMATIONS
+   =============================== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -324,21 +313,11 @@ footer {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* Instagram Link Styling */
-.site-footer a.instagram-link {
-  color: #fff; /* text color */
-  background: #e4405f; /* Instagram pink/red */
-  padding: 8px 16px; /* space around text */
-  border-radius: 25px; /* rounded pill shape */
-  text-decoration: none; /* remove underline */
-  display: inline-flex; /* align icon & text */
-  align-items: center;
-  gap: 8px; /* space between icon and text */
-  font-weight: 600;
-  transition: background 0.3s, transform 0.3s;
-}
 
-.site-footer a.instagram-link:hover {
-  background: #c13584; /* darker on hover */
-  transform: scale(1.05); /* slight zoom effect */
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

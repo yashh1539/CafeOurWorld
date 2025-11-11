@@ -1,5 +1,5 @@
 /* ------------------------------
-   Cafecito Santa Fe – About Page Styles
+   CafeOurWorld – About Page Styles (Updated)
    ------------------------------ */
 
 /* Font Imports */
@@ -73,6 +73,8 @@ body {
   background: none;
   font-size: 1.6rem;
   cursor: pointer;
+  color: #3b2f2f;
+  z-index: 1000;
 }
 
 .nav__list {
@@ -168,14 +170,8 @@ body {
 }
 
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ------------------------------
@@ -220,12 +216,13 @@ body {
    Footer
    ------------------------------ */
 .site-footer {
-  background-color: #3b2f2f;
+  background: linear-gradient(135deg, #7c4a21, #a86a3d, #3b2f2f);
   color: #f7f3ef;
   padding: 50px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-top: 4px solid #a86a3d;
 }
 
 .site-footer p {
@@ -305,9 +302,17 @@ body {
 }
 
 /* ------------------------------
-   Responsive Design
+   ✅ Responsive Navigation Fix
    ------------------------------ */
 @media (max-width: 768px) {
+  .site-header .container {
+    position: relative;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
   .nav__list {
     display: none;
     flex-direction: column;
@@ -319,10 +324,26 @@ body {
     right: 5%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
   }
 
-  .nav__toggle {
-    display: block;
+  .nav__list.nav__list--open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav__list li {
+    text-align: right;
+  }
+
+  .nav__list a {
+    color: #3b2f2f;
+    font-weight: 600;
+    font-size: 1rem;
   }
 
   .hero__content h1 {
@@ -344,37 +365,4 @@ body {
   .our-story p {
     font-size: 0.95rem;
   }
-
-}
-.site-footer {
-  background: linear-gradient(135deg, #7c4a21, #a86a3d, #3b2f2f);
-  color: #f7f3ef;
-  padding: 50px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  border-top: 4px solid #a86a3d;
-}
-
-.site-footer p {
-  font-size: 0.95rem;
-  color: #e9e2d8;
-  transition: color 0.4s ease;
-}
-
-.site-footer p:hover {
-  color: #fff;
-}
-
-/* Subtle footer glow */
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: linear-gradient(90deg, #7c4a21, #a86a3d, #7c4a21);
-  background-size: 300% 100%;
-  animation: glowMove 6s linear infinite;
 }

@@ -15,8 +15,13 @@
     <div class="container">
       <a href="index.html" class="brand">CafeOurWorld</a>
       <nav class="nav">
-        <button class="nav__toggle">☰ Menu</button>
-        <ul class="nav__list">
+        <!-- Added ID for JS -->
+        <button id="nav-toggle" class="nav__toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Added ID for JS -->
+        <ul id="nav-list" class="nav__list">
           <li><a href="index.html">Home</a></li>
           <li><a href="Menu.html">Menu</a></li>
           <li><a href="https://yashh1539.github.io/CafeOurWorld/visitus.html">Visit</a></li>
@@ -31,7 +36,7 @@
     <div class="container hero__inner">
       <h1>Welcome to CafeOurWorld</h1>
       <p class="sub">Breakfast · Lunch · Brunch · Coffee</p>
-      <img src="images/hero.jpg" alt="" class="hero__img">
+      <img src="" alt="" class="hero__img">
     </div>
   </section>
 
@@ -131,6 +136,17 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ✅ Menu Toggle Script -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('nav__list--open');
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+
 </body>
 </html>
